@@ -1,0 +1,83 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.searchInput {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.chartButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.chartButton:hover {
+    background-color: #0056b3;
+}
+
+.productTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 60px;
+}
+
+.productTable th,
+.productTable td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.productTable th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.productTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.productTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.container {
+    max-width: 1000px;
+    /* Aumenta el ancho máximo */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chartContainer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.chartContainer h2 {
+    margin-bottom: 20px;
+    color: #444;
+}
