@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductTable from './components/ProductTable';
+import ProductTable from './components/TablaProductos';
 
 function App() {
   return (

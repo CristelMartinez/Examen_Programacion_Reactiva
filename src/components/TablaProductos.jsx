@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import styles from '../ProductTable.module.css';
+import styles from '../Tabla.css';
 
 const ProductTable = () => {
-    const [products, setProducts] = useState([]); // Inicializado como array vacío
+    const [products, setProducts] = useState([]); 
     const [searchTerm, setSearchTerm] = useState('');
     const [showChart, setShowChart] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState(null);
@@ -11,10 +11,10 @@ const ProductTable = () => {
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
             .then(response => response.json())
-            .then(data => setProducts(data)); // Llena el estado con datos de la API
+            .then(data => setProducts(data)); 
     }, []);
 
-    // Filtra los productos según el término de búsqueda y la categoría seleccionada
+    
     const filteredProducts = products.filter(product => {
         const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
             product.category.toLowerCase().includes(searchTerm.toLowerCase());
@@ -22,17 +22,17 @@ const ProductTable = () => {
         return matchesSearch && matchesCategory;
     });
 
-    // Obtiene las categorías y cuenta los productos por categoría
+    
     const categories = [...new Set(products.map(product => product.category))];
     const categoryCounts = categories.map(category => ({
         category,
         count: products.filter(product => product.category === category).length,
     }));
 
-    // Maneja el clic en una barra del gráfico
+    
     const handleBarClick = (data) => {
         if (data && data.activePayload) {
-            setSelectedCategory(data.activePayload[0].payload.category); // Actualiza la categoría seleccionada
+            setSelectedCategory(data.activePayload[0].payload.category); 
         }
     };
 
@@ -59,7 +59,7 @@ const ProductTable = () => {
                         width={800}
                         height={400}
                         data={categoryCounts}
-                        onClick={handleBarClick} // Maneja el clic en las barras
+                        onClick={handleBarClick} 
                     >
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="category" />
